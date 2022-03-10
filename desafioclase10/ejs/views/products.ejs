@@ -1,0 +1,16 @@
+<%- include('./styles/main')-%> 
+<div class="box">
+    <% if (data){ %>
+        <% data.forEach(product=>{%>
+            <ul>
+                <li>NOMBRE: <%=product.title%> </li>
+                <li>PRECIO: <%=product.price%></li>
+                <li><img class="image" src=<%=product.thumbnail%> alt="No hay foto"></li>
+                <li>ID: <%=product.id%> </li> 
+            </ul>
+        <% }) %>  
+    <% }else{ %>
+        <h1>No se encontraron productos</h1>
+    <% } %>   
+</div>
+<a href="/">Cargar nuevo producto</a>

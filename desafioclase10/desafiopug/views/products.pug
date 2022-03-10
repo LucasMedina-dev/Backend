@@ -1,0 +1,29 @@
+extends layouts/main.pug
+
+block view
+    style.
+        li{
+            all:unset;
+            display: block;
+        }
+
+        .box{
+            display:inline-flex;
+            flex-wrap: wrap;
+            background-color: grey;
+        }
+        .image{
+            width: 150px;
+        }
+    div(class="box")
+        if data.length>0
+            each product in data
+                ul
+                    li NOMBRE #{product.title}
+                    li PRECIO #{product.price}
+                    li
+                        img(class="image" src=product.thumbnail alt=product.id)
+                    li=product.id
+        else
+            h1 No se encontraron productos 
+    a(href="/") Cargar nuevo producto

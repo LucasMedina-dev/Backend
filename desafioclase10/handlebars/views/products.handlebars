@@ -1,0 +1,31 @@
+<style>
+    li{
+        all:unset;
+        display: block;
+    }
+
+    .box{
+        display:inline-flex;
+        flex-wrap: wrap;
+        background-color: grey;
+    }
+    .image{
+        width: 150px;
+    }
+
+</style>
+<div class="box">
+        {{#if data}}
+            {{#each data}}
+                <ul>
+                    <li>NOMBRE: {{this.title}}</li>
+                    <li>PRECIO: {{this.price}}</li>
+                    <li><img class="image" src="{{this.thumbnail}}" alt="{{this.id}}"></li>
+                    <li>ID: {{this.id}}</li> 
+                </ul>
+            {{/each}}
+        {{else}}
+            <h1>No se encontraron productos</h1>
+        {{/if}}
+</div>
+<a href="/">Cargar nuevo producto</a>
