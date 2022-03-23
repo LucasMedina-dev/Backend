@@ -1,0 +1,14 @@
+<div class="box">
+        {{#if data}}
+            {{#each data}}
+                <ul>
+                    <li>NOMBRE: {{this.name}}</li>
+                    <li>PRECIO: {{this.price}}</li>
+                    <li><img class="image" src="{{this.thumbnail}}" alt="{{this.id}}"></li>
+                    <li>ID: {{this.id}}</li> 
+                </ul>
+            {{/each}}
+        {{else}}
+            <h1>No se encontraron productos</h1>
+        {{/if}}
+</div>
